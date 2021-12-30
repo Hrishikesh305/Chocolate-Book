@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js" defer></script>
+    <title>Orders</title>
+    
+</head>
+<body>
+        <nav>
+            <div class="navbtn" id="orders">
+                <img src="Images\house.png" height="30px">
+                <br>
+                Orders
+            </div>
+            <div class="navbtn" id="Batchs">
+                <img src="Images\Batch.png" height="30px">
+                <br>
+                Batchs
+            </div>
+            <div class="navbtn" id="Boxes">
+                <img src="Images\Box.png" height="30px">
+                <br>
+                Boxes
+            </div>
+            <div class="navbtn" id="Boxes">
+                <img src="Images\Graph.png" height="30px">
+                <br>
+                Graphs
+            </div>
+        </nav>
+    
+    <content>
+        <header>
+            <img src="Images\Logo.png" height="40px">
+            <text>Orders</text>
+        </header>
+            
+        <search>
+            <div contenteditable="true" id="textfield"></div>
+            <button id="hash">#</button>
+        </search>
+        
+        <actionbtn>
+            <button class="tbl_btn" id="backward">«</button>
+            <btn id="F">
+                <img src="Images\Filter.png" height="20px" id="Filterimg">
+                Filters
+            </btn>
+            <btn id="S"><img src="Images\Spreadsheet.png" height="20px" id="Spreadsheetimg">Spreadsheet</btn>
+            <button class="tbl_btn" id="foreward">»</button>
+        </actionbtn>
+
+        <table id="maintbl">
+            <tr><th>ID</th>
+                <th>Name</th>
+                <th>Address and Phone</th>
+                <th>Order Details</th>
+                <th>Progress</th>
+                <th>Due</th>
+                <th>Paid</th>
+            </tr>
+        </table>
+    </content>
+</body>
+</html>
