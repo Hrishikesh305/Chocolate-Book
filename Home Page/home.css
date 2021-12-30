@@ -106,7 +106,9 @@ table{
     margin-right: 0px;
     margin-left: var(--tbl_btn_distance);
 }
-
+#Filterimg, #Spreadsheetimg{
+    padding-right: 5px;
+}
 btn{
     padding:20px;
 }
