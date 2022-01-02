@@ -133,7 +133,7 @@ globalThis.changeTable= function(){
 changeTable()
 
 function implementInfoset(infoSet, rowID){
-    if(currentWindow=="Orders"){
+    if(currentWindow=="orders"){
         let idSkeletons = ["id", "name", "adrs", "order", "stat", "date", "pay"]
         for(var fieldNo = 0; fieldNo < 4; fieldNo++ ){
             var elementId = idSkeletons[fieldNo]+rowID+""
