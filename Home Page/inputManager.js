@@ -1,3 +1,4 @@
+console.log(currentWindow)
 addEventListener("keyup", enterKeyRegulator);
 addEventListener("keydown", enterKeyRegulator);
 addEventListener('keyup', arrowKeySelection, false)
@@ -6,16 +7,26 @@ addEventListener("focusout",onLostFocus, false)// for date
 
 
 function focusOnNext(currentid){
-    let idSkeletons = ["id", "name", "adrs", "order", "stat", "date", "pay"]
+    let idSkeletons
+    if(currentWindow=="orders"){
+        idSkeletons = ["id", "name", "adrs", "order", "stat", "date", "pay"]
+    }
+    else if(currentWindow=="batches"){
+        idSkeletons = ["id", "notes", "bstat", "date", "nuts"]
+    }
+    else if(currentWindow=="people"){
+        idSkeletons = ["id", "name", "adrs", "ph", "note"]
+    }
+    var numberOfColumns = idSkeletons.length-1 
     let Skeleton = currentid.replace(/[0-9]/g, '');
     let SkeletonId = idSkeletons.indexOf(Skeleton)
     var oldNumber = Number(currentid.replace(/[a-z]/g, ''))
-    if (SkeletonId != 6 && oldNumber<= numberOfRows){
+    if (SkeletonId != numberOfColumns && oldNumber<= numberOfRows){
         var nextSkeleton = idSkeletons[SkeletonId+1]
         var newNumber = oldNumber
         
     }
-    else if (SkeletonId==6 && oldNumber<= numberOfRows){
+    else if (SkeletonId==numberOfColumns && oldNumber<numberOfRows){
         var nextSkeleton = idSkeletons[0]
         var newNumber = oldNumber+1
     } 
@@ -23,7 +34,7 @@ function focusOnNext(currentid){
         var nextSkeleton = idSkeletons[0]
         var newNumber = 0
     }
-    
+    console.log(nextSkeleton+newNumber)
     return nextSkeleton + newNumber
 
 }

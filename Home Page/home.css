@@ -121,7 +121,7 @@ btn{
     padding-left: 5px;
 }
 
-btn:hover{
+btn:hover, .navbtn:hover{
     color: grey;
 }
 
