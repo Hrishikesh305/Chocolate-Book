@@ -6,7 +6,7 @@ addEventListener('mouseup', ifSelectInput, false)//for selections
 addEventListener("focusout",onLostFocus, false)// for date
 
 
-function focusOnNext(currentid){
+function focusOnNext(currentId){
     let idSkeletons
     if(currentWindow=="orders"){
         idSkeletons = ["id", "name", "adrs", "order", "stat", "date", "pay"]
@@ -18,9 +18,9 @@ function focusOnNext(currentid){
         idSkeletons = ["id", "name", "adrs", "ph", "note"]
     }
     var numberOfColumns = idSkeletons.length-1 
-    let Skeleton = currentid.replace(/[0-9]/g, '');
+    let Skeleton = currentId.replace(/[0-9]/g, '');
     let SkeletonId = idSkeletons.indexOf(Skeleton)
-    var oldNumber = Number(currentid.replace(/[a-z]/g, ''))
+    var oldNumber = Number(currentId.replace(/[a-z]/g, ''))
     if (SkeletonId != numberOfColumns && oldNumber<= numberOfRows){
         var nextSkeleton = idSkeletons[SkeletonId+1]
         var newNumber = oldNumber
