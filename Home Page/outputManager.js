@@ -1,6 +1,42 @@
 
 globalThis.table = document.getElementById("maintbl");
 globalThis.numberOfRows= 10
+var people = [
+    {
+    "id": 1,
+    "name":"Hrishikesh",
+    "adrs": "There",
+    "ph": 9495517,
+    "note": "Hello World"}, 
+    {
+    "id": 1,
+    "name":"Hrishikesh",
+    "adrs": "There",
+    "ph": 9495517,
+    "note": "Hello World"}, 
+    {
+    "id": 1,
+    "name":"Hrishikesh",
+    "adrs": "There",
+    "ph": 9495517,
+    "note": "Hello World"},
+    ]
+function findDetails(name){
+    for(var i = 0; i<people.length; i++){
+        if(people[i].name==name){
+            return [people[i].id, people[i].name, people[i].adrs, people[i].ph, people[i].note]
+        }
+    }
+}
+function updateOrderDetails(nameId){
+    var newName = document.getElementById(nameId)
+    var rowId = `row${nameId.replace(/[a-z]/g, '')}`
+    var details = findDetails(newName)
+    if(currentWindow=="people" && details!=undefined){
+        implementInfoset(details, rowId)
+    }
+
+}
 var infoset = [1, "Name", "adrs", "order", "Cancelled", "2021-12-12", "Waiting"]
 var currentInfoSet = [12, 31, 10, 11, 1, 2, 64, 34, 5, 3]
 //The cardinal order of the info set is the row ID
@@ -128,7 +164,6 @@ globalThis.changeTable= function(){
     }
 
     //only add infosets here!
-    implementInfoset(infoset, 4) 
 }
 changeTable()
 
@@ -137,12 +172,18 @@ function implementInfoset(infoSet, rowID){
         let idSkeletons = ["id", "name", "adrs", "order", "stat", "date", "pay"]
         for(var fieldNo = 0; fieldNo < 4; fieldNo++ ){
             var elementId = idSkeletons[fieldNo]+rowID+""
-            console.log(elementId)
             document.getElementById(elementId).innerText = infoSet[fieldNo]
         }
         document.getElementById(`stat${rowID}`).value = infoSet[4]
         document.getElementById(`date${rowID}`).value = infoSet[5]
         document.getElementById(`pay${rowID}`).value = infoSet[6]
+    }
+    else if(currentWindow=="people"){
+        let idSkeletons = ["id", "name", "adrs", "ph", "note"]
+        for(var fieldNo = 0; fieldNo <= 5; fieldNo++ ){
+            var elementId = idSkeletons[fieldNo]+rowID+""
+            document.getElementById(elementId).innerText = infoSet[fieldNo]
+        }
     }
     
 
