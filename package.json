@@ -1,0 +1,25 @@
+{
+  "name": "chocolate-book",
+  "version": "1.0.0",
+  "description": "a physical product management app",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hrishikesh305/Chocolate-Book.git"
+  },
+  "keywords": [
+    "Management"
+  ],
+  "author": "Hrishikesh R Shenoy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hrishikesh305/Chocolate-Book/issues"
+  },
+  "homepage": "https://github.com/Hrishikesh305/Chocolate-Book#readme",
+  "devDependencies": {
+    "electron": "^17.0.1"
+  }
+}
